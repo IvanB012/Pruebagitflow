@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NÉON — Blog de arte y diseño contemporáneo. Inspiración visual, tendencias creativas y exploración artística." />
+  <meta name="keywords" content="arte, diseño, creatividad, ilustración, tipografía, color, tendencias" />
+  <title>NÉON | Blog de Arte & Diseño</title>
+
+  <!-- Google Fonts: Outfit (body) + Space Grotesk (headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome para íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR — barra de navegación flotante con blur
+  ============================================================ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="nav-container">
+      <!-- Logo / marca -->
+      <a href="#" class="nav-logo" aria-label="Inicio NÉON">
+        <span class="logo-text">NÉON</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <!-- Navegación principal -->
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#categorias" class="nav-link" id="nav-categorias">Categorías</a>
+        <a href="#articulos" class="nav-link" id="nav-articulos">Artículos</a>
+        <a href="#destacados" class="nav-link" id="nav-destacados">Destacados</a>
+        <a href="#newsletter" class="nav-link" id="nav-newsletter">Newsletter</a>
+      </nav>
+
+      <!-- Botón de búsqueda + menú móvil -->
+      <div class="nav-actions">
+        <button class="btn-search" id="btn-search" aria-label="Abrir búsqueda">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="btn-menu" id="btn-menu" aria-label="Abrir menú móvil" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Overlay de búsqueda -->
+    <div class="search-overlay" id="search-overlay" role="search" aria-hidden="true">
+      <input
+        type="text"
+        id="search-input"
+        class="search-input"
+        placeholder="Buscar artículos, artistas, tendencias..."
+        aria-label="Campo de búsqueda"
+      />
+      <button class="search-close" id="search-close" aria-label="Cerrar búsqueda">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO — sección principal con texto animado y gradiente
+  ============================================================ -->
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <!-- Fondo animado de partículas / formas -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <!-- Etiqueta de categoría animada -->
+      <div class="hero-badge" aria-label="Artículo más reciente">
+        <span class="badge-dot"></span>
+        Publicación destacada
+      </div>
+
+      <!-- Título principal -->
+      <h1 class="hero-title" id="hero-title">
+        El Arte No<br />
+        <span class="text-gradient">Pide Permiso</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Exploramos las fronteras del diseño contemporáneo, la ilustración experimental
+        y las tendencias visuales que están redefiniendo la creatividad global.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#articulos" class="btn btn-primary" id="hero-cta-primary">
+          Explorar artículos
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#categorias" class="btn btn-ghost" id="hero-cta-secondary">
+          Ver categorías
+        </a>
+      </div>
+
+      <!-- Estadísticas rápidas -->
+      <div class="hero-stats" aria-label="Estadísticas del blog">
+        <div class="stat-item">
+          <span class="stat-number">248</span>
+          <span class="stat-label">Artículos</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number">12K</span>
+          <span class="stat-label">Lectores</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number">36</span>
+          <span class="stat-label">Categorías</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Imagen / visual del héroe -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-card floating">
+        <div class="card-art">
+          <div class="art-shape shape-1"></div>
+          <div class="art-shape shape-2"></div>
+          <div class="art-shape shape-3"></div>
+          <div class="art-shape shape-4"></div>
+          <div class="art-center-text">ARTE<br/>& DISEÑO</div>
+        </div>
+        <div class="card-info">
+          <span class="card-tag">Tendencia 2025</span>
+          <p class="card-caption">El neo-maximalismo como respuesta al minimalismo extremo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-dot"></div>
+      <span>Desliza para explorar</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CATEGORÍAS — chips/tags con íconos coloridos
+  ============================================================ -->
+  <section class="categorias" id="categorias" aria-labelledby="categorias-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Explorar</span>
+        <h2 class="section-title" id="categorias-title">Categorías</h2>
+        <p class="section-desc">Encuentra tu universo creativo</p>
+      </div>
+
+      <div class="categorias-grid" role="list">
+        <!-- Cada categoría tiene un color de acento único -->
+        <button class="categoria-card active" id="cat-todos" data-filter="all" role="listitem" aria-pressed="true">
+          <div class="cat-icon" style="--cat-color: #a855f7;">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <span class="cat-name">Todos</span>
+          <span class="cat-count">248</span>
+        </button>
+
+        <button class="categoria-card" id="cat-ilustracion" data-filter="ilustracion" role="listitem" aria-pressed="false">
+          <div class="cat-icon" style="--cat-color: #f97316;">
+            <i class="fas fa-pen-nib"></i>
+          </div>
+          <span class="cat-name">Ilustración</span>
+          <span class="cat-count">64</span>
+        </button>
+
+        <button class="categoria-card" id="cat-tipografia" data-filter="tipografia" role="listitem" aria-pressed="false">
+          <div class="cat-icon" style="--cat-color: #06b6d4;">
+            <i class="fas fa-font"></i>
+          </div>
+          <span class="cat-name">Tipografía</span>
+          <span class="cat-count">41</span>
+        </button>
+
+        <button class="categoria-card" id="cat-branding" data-filter="branding" role="listitem" aria-pressed="false">
+          <div class="cat-icon" style="--cat-color: #ec4899;">
+            <i class="fas fa-gem"></i>
+          </div>
+          <span class="cat-name">Branding</span>
+          <span class="cat-count">57</span>
+        </button>
+
+        <button class="categoria-card" id="cat-motion" data-filter="motion" role="listitem" aria-pressed="false">
+          <div class="cat-icon" style="--cat-color: #22c55e;">
+            <i class="fas fa-film"></i>
+          </div>
+          <span class="cat-name">Motion</span>
+          <span class="cat-count">33</span>
+        </button>
+
+        <button class="categoria-card" id="cat-3d" data-filter="3d" role="listitem" aria-pressed="false">
+          <div class="cat-icon" style="--cat-color: #eab308;">
+            <i class="fas fa-cube"></i>
+          </div>
+          <span class="cat-name">3D Art</span>
+          <span class="cat-count">28</span>
+        </button>
+
+        <button class="categoria-card" id="cat-fotografia" data-filter="fotografia" role="listitem" aria-pressed="false">
+          <div class="cat-icon" style="--cat-color: #ef4444;">
+            <i class="fas fa-camera"></i>
+          </div>
+          <span class="cat-name">Fotografía</span>
+          <span class="cat-count">45</span>
+        </button>
+
+        <button class="categoria-card" id="cat-ux" data-filter="ux" role="listitem" aria-pressed="false">
+          <div class="cat-icon" style="--cat-color: #8b5cf6;">
+            <i class="fas fa-mouse-pointer"></i>
+          </div>
+          <span class="cat-name">UX / UI</span>
+          <span class="cat-count">38</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ARTÍCULOS — grid estilo revista (masonry-like)
+  ============================================================ -->
+  <section class="articulos" id="articulos" aria-labelledby="articulos-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Lo más reciente</span>
+        <h2 class="section-title" id="articulos-title">Artículos</h2>
+      </div>
+
+      <!-- Grid principal de artículos -->
+      <div class="articles-grid" id="articles-grid">
+
+        <!-- Artículo GRANDE (destacado) -->
+        <article class="article-card article-featured" id="article-1" data-category="ilustracion">
+          <div class="article-img">
+            <div class="img-placeholder" style="--accent: #f97316; --bg: #1a0a00;">
+              <div class="placeholder-art">
+                <div class="pa-circle c1"></div>
+                <div class="pa-circle c2"></div>
+                <div class="pa-line l1"></div>
+                <div class="pa-line l2"></div>
+                <div class="pa-dot d1"></div>
+                <div class="pa-dot d2"></div>
+                <div class="pa-dot d3"></div>
+              </div>
+            </div>
+            <div class="article-overlay">
+              <span class="article-cat" style="--cat-color: #f97316;">Ilustración</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <time datetime="2025-05-18" class="article-date">18 Mayo 2025</time>
+              <span class="article-read">8 min lectura</span>
+            </div>
+            <h3 class="article-title">
+              <a href="#" id="article-1-link">El Renacimiento de la Ilustración Análoga en la Era Digital</a>
+            </h3>
+            <p class="article-excerpt">
+              Cómo artistas de todo el mundo están volviendo al lápiz, la acuarela y el grabado 
+              como respuesta al exceso de herramientas digitales y la búsqueda de autenticidad.
+            </p>
+            <div class="article-footer">
+              <div class="author-info">
+                <div class="author-avatar av-1" aria-hidden="true"></div>
+                <span class="author-name">Valentina Cruz</span>
+              </div>
+              <button class="btn-save" aria-label="Guardar artículo" id="save-1">
+                <i class="far fa-bookmark"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artículo mediano -->
+        <article class="article-card" id="article-2" data-category="tipografia">
+          <div class="article-img article-img-sm">
+            <div class="img-placeholder" style="--accent: #06b6d4; --bg: #001a1f;">
+              <div class="placeholder-art">
+                <div class="pa-text-art">Aa<br/>Bb<br/>Cc</div>
+              </div>
+            </div>
+            <div class="article-overlay">
+              <span class="article-cat" style="--cat-color: #06b6d4;">Tipografía</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <time datetime="2025-05-15" class="article-date">15 Mayo 2025</time>
+              <span class="article-read">5 min</span>
+            </div>
+            <h3 class="article-title">
+              <a href="#" id="article-2-link">Tipografías Variable: El Futuro es Fluido</a>
+            </h3>
+            <p class="article-excerpt">
+              Las fuentes variables permiten transiciones infinitas entre pesos y estilos, 
+              abriendo posibilidades creativas nunca antes vistas.
+            </p>
+            <div class="article-footer">
+              <div class="author-info">
+                <div class="author-avatar av-2" aria-hidden="true"></div>
+                <span class="author-name">Marco Reyes</span>
+              </div>
+              <button class="btn-save" aria-label="Guardar artículo" id="save-2">
+                <i class="far fa-bookmark"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artículo mediano -->
+        <article class="article-card" id="article-3" data-category="branding">
+          <div class="article-img article-img-sm">
+            <div class="img-placeholder" style="--accent: #ec4899; --bg: #1a0010;">
+              <div class="placeholder-art">
+                <div class="pa-logo-art">
+                  <div class="logo-shape ls1"></div>
+                  <div class="logo-shape ls2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="article-overlay">
+              <span class="article-cat" style="--cat-color: #ec4899;">Branding</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <time datetime="2025-05-12" class="article-date">12 Mayo 2025</time>
+              <span class="article-read">6 min</span>
+            </div>
+            <h3 class="article-title">
+              <a href="#" id="article-3-link">Identidad Visual Líquida: Marcas que Evolucionan</a>
+            </h3>
+            <p class="article-excerpt">
+              Las marcas contemporáneas abandonan el logotipo estático para adoptar
+              sistemas identitarios adaptativos que responden a cada contexto.
+            </p>
+            <div class="article-footer">
+              <div class="author-info">
+                <div class="author-avatar av-3" aria-hidden="true"></div>
+                <span class="author-name">Sofía Mendoza</span>
+              </div>
+              <button class="btn-save" aria-label="Guardar artículo" id="save-3">
+                <i class="far fa-bookmark"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artículo horizontal (ancho completo en móvil) -->
+        <article class="article-card article-horizontal" id="article-4" data-category="motion">
+          <div class="article-img article-img-horizontal">
+            <div class="img-placeholder" style="--accent: #22c55e; --bg: #001a08;">
+              <div class="placeholder-art">
+                <div class="pa-wave w1"></div>
+                <div class="pa-wave w2"></div>
+                <div class="pa-wave w3"></div>
+              </div>
+            </div>
+            <div class="article-overlay">
+              <span class="article-cat" style="--cat-color: #22c55e;">Motion</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <time datetime="2025-05-10" class="article-date">10 Mayo 2025</time>
+              <span class="article-read">7 min</span>
+            </div>
+            <h3 class="article-title">
+              <a href="#" id="article-4-link">Motion Design: Cómo el Movimiento Cuenta Historias</a>
+            </h3>
+            <p class="article-excerpt">
+              Desde microinteracciones en interfaces hasta cortometrajes animados, el diseño en movimiento
+              se ha convertido en el lenguaje universal de la comunicación visual del siglo XXI.
+            </p>
+            <div class="article-footer">
+              <div class="author-info">
+                <div class="author-avatar av-4" aria-hidden="true"></div>
+                <span class="author-name">Diego Flores</span>
+              </div>
+              <button class="btn-save" aria-label="Guardar artículo" id="save-4">
+                <i class="far fa-bookmark"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artículo mediano -->
+        <article class="article-card" id="article-5" data-category="3d">
+          <div class="article-img article-img-sm">
+            <div class="img-placeholder" style="--accent: #eab308; --bg: #1a1200;">
+              <div class="placeholder-art">
+                <div class="pa-cube"></div>
+              </div>
+            </div>
+            <div class="article-overlay">
+              <span class="article-cat" style="--cat-color: #eab308;">3D Art</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <time datetime="2025-05-08" class="article-date">8 Mayo 2025</time>
+              <span class="article-read">9 min</span>
+            </div>
+            <h3 class="article-title">
+              <a href="#" id="article-5-link">Hiperrealismo 3D: Cuando lo Virtual Supera lo Real</a>
+            </h3>
+            <p class="article-excerpt">
+              Los artistas 3D contemporáneos logran renders indistinguibles de fotografías reales,
+              borrando la línea entre el mundo físico y el digital.
+            </p>
+            <div class="article-footer">
+              <div class="author-info">
+                <div class="author-avatar av-5" aria-hidden="true"></div>
+                <span class="author-name">Andrés Kim</span>
+              </div>
+              <button class="btn-save" aria-label="Guardar artículo" id="save-5">
+                <i class="far fa-bookmark"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Artículo mediano -->
+        <article class="article-card" id="article-6" data-category="ux">
+          <div class="article-img article-img-sm">
+            <div class="img-placeholder" style="--accent: #8b5cf6; --bg: #0d0020;">
+              <div class="placeholder-art">
+                <div class="pa-ui-art">
+                  <div class="ui-bar ub1"></div>
+                  <div class="ui-bar ub2"></div>
+                  <div class="ui-bar ub3"></div>
+                  <div class="ui-btn"></div>
+                </div>
+              </div>
+            </div>
+            <div class="article-overlay">
+              <span class="article-cat" style="--cat-color: #8b5cf6;">UX / UI</span>
+            </div>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <time datetime="2025-05-05" class="article-date">5 Mayo 2025</time>
+              <span class="article-read">6 min</span>
+            </div>
+            <h3 class="article-title">
+              <a href="#" id="article-6-link">Diseño Emocional: Interfaces que Generan Sentimientos</a>
+            </h3>
+            <p class="article-excerpt">
+              Más allá de la usabilidad, el diseño de experiencias busca generar conexiones
+              emocionales profundas entre el usuario y el producto.
+            </p>
+            <div class="article-footer">
+              <div class="author-info">
+                <div class="author-avatar av-1" aria-hidden="true"></div>
+                <span class="author-name">Valentina Cruz</span>
+              </div>
+              <button class="btn-save" aria-label="Guardar artículo" id="save-6">
+                <i class="far fa-bookmark"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /articles-grid -->
+
+      <!-- Botón cargar más -->
+      <div class="load-more-container">
+        <button class="btn btn-outline" id="btn-load-more">
+          Ver más artículos
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DESTACADOS — sección con artículos top del mes
+  ============================================================ -->
+  <section class="destacados" id="destacados" aria-labelledby="destacados-title">
+    <div class="container">
+      <div class="section-header section-header-inline">
+        <div>
+          <span class="section-tag">Este mes</span>
+          <h2 class="section-title" id="destacados-title">Más Leídos</h2>
+        </div>
+        <a href="#" class="btn btn-ghost-sm" id="ver-todos-destacados">Ver todos</a>
+      </div>
+
+      <div class="destacados-list" role="list">
+        <article class="destacado-item" id="dest-1" role="listitem">
+          <span class="dest-number">01</span>
+          <div class="dest-img">
+            <div class="img-placeholder-sm" style="--accent: #a855f7; --bg: #0d0020;"></div>
+          </div>
+          <div class="dest-body">
+            <span class="dest-cat">Branding</span>
+            <h3 class="dest-title">
+              <a href="#" id="dest-1-link">Los 10 Rebrandings más Impactantes de 2025</a>
+            </h3>
+            <span class="dest-read">12 min lectura</span>
+          </div>
+          <div class="dest-likes" aria-label="3.2 mil me gusta">
+            <i class="fas fa-heart"></i>
+            <span>3.2K</span>
+          </div>
+        </article>
+
+        <article class="destacado-item" id="dest-2" role="listitem">
+          <span class="dest-number">02</span>
+          <div class="dest-img">
+            <div class="img-placeholder-sm" style="--accent: #f97316; --bg: #1a0a00;"></div>
+          </div>
+          <div class="dest-body">
+            <span class="dest-cat">Ilustración</span>
+            <h3 class="dest-title">
+              <a href="#" id="dest-2-link">Guía Completa de Estilos de Ilustración Digital</a>
+            </h3>
+            <span class="dest-read">15 min lectura</span>
+          </div>
+          <div class="dest-likes" aria-label="2.8 mil me gusta">
+            <i class="fas fa-heart"></i>
+            <span>2.8K</span>
+          </div>
+        </article>
+
+        <article class="destacado-item" id="dest-3" role="listitem">
+          <span class="dest-number">03</span>
+          <div class="dest-img">
+            <div class="img-placeholder-sm" style="--accent: #06b6d4; --bg: #001a1f;"></div>
+          </div>
+          <div class="dest-body">
+            <span class="dest-cat">Tipografía</span>
+            <h3 class="dest-title">
+              <a href="#" id="dest-3-link">Serif vs Sans-serif: El Debate que Nunca Termina</a>
+            </h3>
+            <span class="dest-read">8 min lectura</span>
+          </div>
+          <div class="dest-likes" aria-label="2.1 mil me gusta">
+            <i class="fas fa-heart"></i>
+            <span>2.1K</span>
+          </div>
+        </article>
+
+        <article class="destacado-item" id="dest-4" role="listitem">
+          <span class="dest-number">04</span>
+          <div class="dest-img">
+            <div class="img-placeholder-sm" style="--accent: #22c55e; --bg: #001a08;"></div>
+          </div>
+          <div class="dest-body">
+            <span class="dest-cat">Motion</span>
+            <h3 class="dest-title">
+              <a href="#" id="dest-4-link">Herramientas de Motion Design para 2025</a>
+            </h3>
+            <span class="dest-read">10 min lectura</span>
+          </div>
+          <div class="dest-likes" aria-label="1.9 mil me gusta">
+            <i class="fas fa-heart"></i>
+            <span>1.9K</span>
+          </div>
+        </article>
+
+        <article class="destacado-item" id="dest-5" role="listitem">
+          <span class="dest-number">05</span>
+          <div class="dest-img">
+            <div class="img-placeholder-sm" style="--accent: #ec4899; --bg: #1a0010;"></div>
+          </div>
+          <div class="dest-body">
+            <span class="dest-cat">3D Art</span>
+            <h3 class="dest-title">
+              <a href="#" id="dest-5-link">Blender vs Cinema 4D: ¿Cuál Elegir en 2025?</a>
+            </h3>
+            <span class="dest-read">11 min lectura</span>
+          </div>
+          <div class="dest-likes" aria-label="1.7 mil me gusta">
+            <i class="fas fa-heart"></i>
+            <span>1.7K</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEWSLETTER — suscripción con diseño llamativo
+  ============================================================ -->
+  <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
+    <div class="newsletter-bg" aria-hidden="true">
+      <div class="nl-blob nl-blob-1"></div>
+      <div class="nl-blob nl-blob-2"></div>
+    </div>
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="nl-badge" aria-hidden="true">
+          <i class="fas fa-envelope-open-text"></i>
+        </div>
+        <h2 class="nl-title" id="newsletter-title">No te pierdas nada</h2>
+        <p class="nl-subtitle">
+          Recibe cada semana los artículos más inspiradores, herramientas y tendencias
+          directamente en tu bandeja de entrada. Sin spam. Sin ruido.
+        </p>
+        <form class="nl-form" id="newsletter-form" novalidate aria-label="Formulario de suscripción">
+          <div class="nl-input-group">
+            <input
+              type="email"
+              id="nl-email"
+              class="nl-input"
+              placeholder="tu@email.com"
+              required
+              aria-label="Tu correo electrónico"
+              aria-describedby="nl-hint"
+            />
+            <button type="submit" class="btn btn-primary nl-btn" id="nl-submit">
+              Suscribirme
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+          <p class="nl-hint" id="nl-hint">
+            <i class="fas fa-shield-alt"></i>
+            Sin spam. Cancela cuando quieras.
+          </p>
+          <div class="nl-success" id="nl-success" role="alert" aria-live="polite" hidden>
+            <i class="fas fa-check-circle"></i>
+            ¡Bienvenido a la comunidad NÉON! Revisa tu correo.
+          </div>
+        </form>
+        <div class="nl-social">
+          <span>También en:</span>
+          <a href="#" class="social-link" id="social-instagram" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-link" id="social-twitter" aria-label="Twitter / X">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+          <a href="#" class="social-link" id="social-behance" aria-label="Behance">
+            <i class="fab fa-behance"></i>
+          </a>
+          <a href="#" class="social-link" id="social-dribbble" aria-label="Dribbble">
+            <i class="fab fa-dribbble"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Logo y descripción -->
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" aria-label="Inicio NÉON">
+            <span class="logo-text">NÉON</span>
+            <span class="logo-dot"></span>
+          </a>
+          <p class="footer-desc">
+            El blog de arte y diseño que impulsa a la comunidad creativa hispanohablante
+            a explorar, experimentar y crear sin límites.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" id="footer-instagram" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" id="footer-twitter" aria-label="Twitter / X">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="#" class="social-link" id="footer-behance" aria-label="Behance">
+              <i class="fab fa-behance"></i>
+            </a>
+            <a href="#" class="social-link" id="footer-youtube" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links de navegación por columnas -->
+        <nav class="footer-nav" aria-label="Navegación de pie de página">
+          <div class="footer-col">
+            <h4 class="footer-col-title">Explorar</h4>
+            <ul>
+              <li><a href="#" id="footer-ilustracion">Ilustración</a></li>
+              <li><a href="#" id="footer-tipografia">Tipografía</a></li>
+              <li><a href="#" id="footer-branding">Branding</a></li>
+              <li><a href="#" id="footer-motion">Motion Design</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Blog</h4>
+            <ul>
+              <li><a href="#" id="footer-recientes">Más recientes</a></li>
+              <li><a href="#" id="footer-populares">Más populares</a></li>
+              <li><a href="#" id="footer-tutoriales">Tutoriales</a></li>
+              <li><a href="#" id="footer-herramientas">Herramientas</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Nosotros</h4>
+            <ul>
+              <li><a href="#" id="footer-acerca">Acerca de</a></li>
+              <li><a href="#" id="footer-equipo">Equipo editorial</a></li>
+              <li><a href="#" id="footer-contribuir">Contribuir</a></li>
+              <li><a href="#" id="footer-contacto">Contacto</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2025 NÉON. Hecho con <i class="fas fa-heart" style="color: #ec4899;"></i> para la comunidad creativa.
+        </p>
+        <div class="footer-legal">
+          <a href="#" id="footer-privacidad">Privacidad</a>
+          <a href="#" id="footer-terminos">Términos</a>
+          <a href="#" id="footer-cookies">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón volver arriba -->
+  <button class="btn-top" id="btn-top" aria-label="Volver al inicio" hidden>
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
